@@ -1,0 +1,110 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} - MTS - Evaluador de Riesgo {% else %}{{ _('Evaluador de Riesgo') }}{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    {% if current_user.es_admin==False %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('main.inicio', username=current_user.username) }}">RDF</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('main.inicio', username=current_user.username) }}">{{ _('Inicio') }}</a></li>
+                    <li><a href="{{ url_for('main.evaluador') }}">{{ _('Evaluador') }}</a></li>
+                    <li><a href="{{ url_for('main.historial', username=current_user.username) }}">{{ _('Historial Consultas') }}</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('auth.login') }}">{{ _('Ingresar') }}</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('main.inicio', username=current_user.username) }}">{{ _(current_user.username) }}</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">{{ _('Salir') }}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% elif current_user.es_admin==True %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('main.empresa', username=current_user.username) }}">RDF</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('main.empresa', username=current_user.username) }}">{{ _('Inicio') }}</a></li>
+                    <li><a href="{{ url_for('main.evaluador') }}">{{ _('Evaluador') }}</a></li>
+                    <li><a href="{{ url_for('main.historial', username=current_user.username) }}">{{ _('Historial Consultas') }}</a></li>
+                    <li><a href="{{ url_for('main.evaluador') }}">{{ _('Seguimiento') }}</a></li>
+                    <li><a href="{{ url_for('main.register') }}">{{ _('Gestion Usuarios') }}</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('auth.login') }}">{{ _('Ingresar') }}</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('main.empresa', username=current_user.username) }}">{{ _(current_user.username) }}</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">{{ _('Salir') }}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>    
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
+    <script>
+        function translate(sourceElem, destElem, sourceLang, destLang) {
+            $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+            $.post('/translate', {
+                text: $(sourceElem).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function(response) {
+                $(destElem).text(response['text'])
+            }).fail(function() {
+                $(destElem).text("{{ _('Error: Could not contact server.') }}");
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}">
+{% endblock %}

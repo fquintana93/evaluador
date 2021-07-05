@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>{{ _('Ha ocurrido un error inesperado') }}</h1>
+    <p>{{ _('El administrado ha sido notificado. Lamentamos los inconvenientes!') }}</p>
+    {% if current_user.es_admin==False %}
+    <p><a href="{{ url_for('inicio', username=current_user.username) }}">{{ _('Back') }}</a></p>
+    {% elif current_user.es_admin==True %}
+    <p><a href="{{ url_for('empresa', username=current_user.username) }}">{{ _('Back') }}</a></p>
+    {% endif %}
+{% endblock %}

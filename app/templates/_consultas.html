@@ -1,0 +1,28 @@
+    <table class="table table-hover">
+        <tr>
+            <td width="10px">
+                <!--<a href="{{ url_for('main.historial', username=consultas.ejecutivo.username) }}">-->
+                <a href="#">
+                </a>
+            </td>
+            <td>
+                {% set id_link %}
+                    <a href="#">
+                    <a href="{{ url_for('main.evaluacion', consultaid=consultas.id) }}">
+                        {{ consultas.id }}
+                    </a>
+                {% endset %}
+                <div class="">
+                    <h3 class="">
+                    {{ _('%(username)s realizo la consulta ID: %(id_link)s con fecha: %(fecha)s',
+                    username=consultas.ejecutivo, id_link=id_link,  fecha= consultas.fecha_ev)}}
+                    </h3>
+                    <div class="atributos-historial">
+                    <h3 class="atributos-historial">Rut: <span class = "atributo-span">{{ consultas.rut }} </span> </h3>
+                    <h3 class="atributos-historial">Cliente: <span class = "atributo-span">{{ consultas.cliente }} </span> </h3>
+                    <h3 class="atributos-historial">Score: <span class = "atributo-span">{{ consultas.score_final }} </span> </h3>
+                    </div>
+                </div>                
+            </td>
+        </tr>
+    </table>

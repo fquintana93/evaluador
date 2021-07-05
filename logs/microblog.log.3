@@ -1,0 +1,124 @@
+2021-06-29 13:01:52,254 ERROR: Exception on /Consulta-5 [GET] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 293, in evaluacion
+    graficoconsulta(base, consultaid, consulta_rut, current_user.empresa, ruta_grafico)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\consultas.py", line 210, in graficoconsulta
+    fig.savefig(ruta)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\figure.py", line 3005, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backends\backend_qt5agg.py", line 78, in print_figure
+    super().print_figure(*args, **kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backend_bases.py", line 2255, in print_figure
+    result = print_method(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backend_bases.py", line 1669, in wrapper
+    return func(*args, **kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backends\backend_agg.py", line 509, in print_png
+    mpl.image.imsave(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\image.py", line 1616, in imsave
+    image.save(fname, **pil_kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\PIL\Image.py", line 2169, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '../static/graficos/7908462-k.png'
+2021-06-29 13:02:30,604 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 13:02:33,619 ERROR: Exception on /Consulta-5 [GET] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 293, in evaluacion
+    graficoconsulta(base, consultaid, consulta_rut, current_user.empresa, ruta_grafico)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\consultas.py", line 210, in graficoconsulta
+    fig.savefig(ruta)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\figure.py", line 3005, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backends\backend_qt5agg.py", line 78, in print_figure
+    super().print_figure(*args, **kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backend_bases.py", line 2255, in print_figure
+    result = print_method(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backend_bases.py", line 1669, in wrapper
+    return func(*args, **kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\backends\backend_agg.py", line 509, in print_png
+    mpl.image.imsave(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\matplotlib\image.py", line 1616, in imsave
+    image.save(fname, **pil_kwargs)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\PIL\Image.py", line 2169, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '../static/graficos/7908462-k.png'
+2021-06-29 13:03:45,186 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 13:35:28,421 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 13:35:32,587 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 13:53:04,357 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 15:41:15,118 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 15:41:34,073 ERROR: Exception on /evaluador/documentos [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 117, in evaluador
+    consulta_sii(datosultimaconsulta[1], datosultimaconsulta[0], base = 'C:\\Users\\user\\Desktop\\MTS\\app.db')
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\cmf.py", line 896, in consulta_sii
+    c.execute(query_consulta)
+sqlite3.OperationalError: no such column: None
+2021-06-29 15:42:43,404 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 15:46:03,591 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 16:32:18,937 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 16:46:22,604 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 16:49:55,352 ERROR: Exception on /evaluador/documentos [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 92, in evaluador
+    control_cmf = controlescmf(os.path.join(current_app._get_current_object().config['UPLOADED_DOCUMENTS_DEST'], filename_documento_cmf))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\controles.py", line 18, in controlescmf
+    timbre = page.images[1].as_pil()
+IndexError: list index out of range
+2021-06-29 16:50:07,883 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:21:16,747 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:25:07,126 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:26:23,843 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:39:41,139 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:40:50,220 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:41:38,288 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:43:12,196 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:46:31,181 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:48:41,068 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:54:58,907 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 20:59:53,195 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 21:00:13,817 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 21:02:17,278 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 21:02:37,378 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 21:07:06,259 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 21:10:36,732 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-29 21:11:07,748 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]

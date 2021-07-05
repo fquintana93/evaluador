@@ -1,0 +1,34 @@
+    <table class="table table-hover">
+        <tr>
+            <td width="10px">
+                
+                <a href="#">
+                </a>
+            </td>
+            <td>
+                {% set user_link %}
+                    <a href="#">
+                   
+                        {{ user.username }}
+                    </a>
+                {% endset %}
+
+                
+                <br>
+                <h2 class="subrayado">{{ user }} </h2>
+                <div class= "seguimiento-grid">
+                
+                    
+                    <div class= ""> 
+                    <h2 class="evaluacion-titulo">Informacion Cliente:</h2>
+                    <h2> {{ _('En el ultimo mes realizo %(evaluaciones)s evaluaciones.', evaluaciones=consultas.query.filter_by(user_id = user.id).count()) }} </h2> 
+                    <!--{{ _('Un %(verdes)s son verdes, un %(amarillas)s son amarillas y un %(rojas)s de las evaluaciones son Rojas.', verdes=consultas.query.filter_by(user_id = user.id and consultas.score_final >= 666).count(), amarillas=1, rojas=consultas.query.filter_by(user_id = user.id and consultas.score_final < 333).count()) }}-->
+                    <h2> Un X% son verdes, un Y% son amarillas y un Z% de las evaluaciones son Rojas. </h2>
+                    <h2> En el mes actual se han realizado X evaluaciones </h2>
+                    </div> 
+
+                    <div class= ""> <img src={{ _('"../static/graficos/Ejecutivo-%(dir_imagen)s.png"', dir_imagen=user.id) }} ></div> 
+                </div> 
+            </td>
+        </tr>
+    </table>

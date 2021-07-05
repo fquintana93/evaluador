@@ -1,0 +1,132 @@
+2021-06-28 16:04:04,591 ERROR: Exception on /ejecutivos [GET] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 42, in decorated_function
+    return f(*args, **kws)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 324, in administrar
+    return render_template('ejecutivos.html', title=_('Administrar'), form=form)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\user\Desktop\MTS\app\templates\ejecutivos.html", line 1, in top-level template code
+    {% block app_content %}
+  File "C:\Users\user\Desktop\MTS\app\templates\ejecutivos.html", line 28, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2021-06-28 16:06:01,333 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-28 16:06:20,279 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-28 16:06:22,404 ERROR: Exception on /gestion [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 42, in decorated_function
+    return f(*args, **kws)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 301, in gestion
+    return redirect(url_for('main.ejecutivos'))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.ejecutivos'. Did you mean 'main.gestion' instead?
+2021-06-28 16:07:26,799 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-28 16:07:41,096 ERROR: Exception on /gestion [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 42, in decorated_function
+    return f(*args, **kws)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 301, in gestion
+    return redirect(url_for('main.ejecutivos'))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.ejecutivos'. Did you mean 'main.gestion' instead?
+2021-06-28 16:10:45,938 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-28 16:10:48,278 ERROR: Exception on /gestion [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 42, in decorated_function
+    return f(*args, **kws)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 301, in gestion
+    return redirect(url_for('main.ejecutivos'))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.ejecutivos'. Did you mean 'main.gestion' instead?
+2021-06-28 16:11:11,995 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-28 16:11:24,848 ERROR: Exception on /gestion [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 42, in decorated_function
+    return f(*args, **kws)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 301, in gestion
+    return redirect(url_for('main.ejecutivos'))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.ejecutivos'. Did you mean 'main.gestion' instead?
+2021-06-28 16:12:44,497 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-06-28 16:14:00,156 INFO: Microblog startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]

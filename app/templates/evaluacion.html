@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+
+  
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="../static/css/normalize.css" as="style">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="../static/css/main.css" as="style">
+        <link rel="stylesheet" href="../static/css/main.css">
+    </head>
+
+    <body>
+
+        
+        <div class= "sombra">  
+        <header >
+            <h1 class="evaluacion-titulo"> {{ _('Resumen evaluacion  %(Cliente)s - Evaluacion ID: %(consultaid)s ', Cliente = datos[2], consultaid=consultaid) }}  </h1> 
+        </header>    
+            <div class= "evaluacion-header">
+                <h1 class="evaluador-item">Detalle evaluacion</h1> 
+                <h1 class="evaluador-item">{{ _('Score: %(puntajefinal)s ', puntajefinal=datos[41]) }}</h1>
+                <a href="{{ url_for('main.evaluador') }}" class="evaluacion-boton">Volver a Evaluar</a>
+            </div> 
+            
+            <div class= "evaluacion-info">
+                <div class="">
+                    
+                    <h2 class="evaluacion-titulo">Informacion Cliente:</h2> 
+                    <ul class="lista-evaluacion">
+                        <li><h3 class="atributos">Rut: <span class = "atributo-span">{{ _(' %(rut)s', rut=datos[1]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Antiguedad Cliente: <span class = "atributo-span">{{ _(' %(antiguedad)s', antiguedad=datos[36]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Frecuencia Compra: <span class = "atributo-span">{{ _(' %(frecuencia)s', frecuencia=datos[39]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Tipo Pago: <span class = "atributo-span">{{ _(' %(plazo)s', plazo=datos[38]) }} </span> </h3> </li>
+                    </ul>
+                    <h2 class="evaluacion-titulo">Informacion CMF:</h2> 
+                    <ul class="lista-evaluacion">
+                      <li><h3 class="atributos">Deuda CMF: <span class = "atributo-span">{{ _(' %(Deuda)s', Deuda=datos[10]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Cupo CMF: <span class = "atributo-span">{{ _(' %(Cupo)s', Cupo=datos[11]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Mora CMF: <span class = "atributo-span">{{ _(' %(Mora)s', Mora=datos[12]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Instituciones CMF: <span class = "atributo-span">{{ _(' %(Instituciones)s', Instituciones=datos[13]) }} </span> </h3> </li>
+                    </ul>
+                    <h2 class="evaluacion-titulo">Informacion Financiera:</h2> 
+                    <ul class="lista-evaluacion">
+                     <li><h3 class="atributos">Inicio Actividades: <span class = "atributo-span">{{ _(' %(fecha)s', fecha=datos[15]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Meses con Venta: <span class = "atributo-span">{{ _(' %(meses)s', meses=datos[17]) }} </span> </h3> </li>
+                        <li><h3 class="atributos">Ventas 12 meses: <span class = "atributo-span">{{ _(' %(ventas)s', ventas=datos[16]) }} </span> </h3> </li>
+                    </ul>
+                </div>
+                <div class="imagen_ev"> 
+                    <h2 class="evaluacion-titulo">Historial Score Cliente</h2>
+                    <img src={{ _('%(dir_imagen)s', dir_imagen=dir_imagen) }} > 
+                </div>
+            </div> 
+            
+            <div class = ""> 
+            
+                <h2 class="evaluacion-titulo">Observaciones</h2>
+                <ul class="">
+                        <li><h3 class="recomendaciones">El cliente presenta un leverage elevado.</h3></li>
+                        <li><h3 class="recomendaciones">El cliente tiene tendencia a pagar con atraso.</h3></li>
+                        <li><h3 class="recomendaciones">Automatizar esta seccion </h3></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
+
+{% endblock %}
+

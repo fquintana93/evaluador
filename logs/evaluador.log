@@ -1,0 +1,127 @@
+2021-07-02 15:20:51,601 ERROR: Exception on /seguimiento [GET] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 275, in seguimiento
+    return render_template('seguimiento.html',title=_('Seguimiento'), user=user.items, consultas = consultas,
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\user\Desktop\MTS\app\templates\seguimiento.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\user\Desktop\MTS\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\user\Desktop\MTS\app\templates\base.html", line 90, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\user\Desktop\MTS\app\templates\seguimiento.html", line 38, in block "app_content"
+    {% include '_usuarios.html' %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\user\Desktop\MTS\app\templates\_usuarios.html", line 25, in template
+    {{ _('Un %(verdes)s son verdes, un %(amarillas)s son amarillas y un %(rojas)s de las evaluaciones son Rojas.', verdes=consultas.query.filter_by(user_id = user.id and consultas.score_final >= 666).count(), amarillas=1, rojas=consultas.query.filter_by(consultas.user_id = user.id and consultas.score_final < 333).count()) }}
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got '='
+2021-07-02 15:21:07,318 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 15:59:01,056 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 16:08:47,600 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 16:34:16,953 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 16:34:52,459 ERROR: Exception on /evaluador/Comportamiento [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 200, in evaluador3
+    return redirect(url_for(url_for('main.evaluacion', consultaid=datosultimaconsulta[1]))) ## ver como poner historial
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint '/Consulta-23'. Did you mean 'consultas.export' instead?
+2021-07-02 16:35:27,269 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 16:41:46,214 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-05 12:39:39,620 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-05 12:40:06,355 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-05 13:55:05,162 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-05 13:55:10,092 ERROR: Exception on /auth/login [POST] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\user\Desktop\MTS\app\auth\routes.py", line 55, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\orm\query.py", line 2750, in first
+    return self.limit(1)._iter().first()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\orm\query.py", line 2834, in _iter
+    result = self.session.execute(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\orm\session.py", line 1677, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\sql\elements.py", line 324, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\base.py", line 1451, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\base.py", line 1813, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\base.py", line 1994, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.name AS user_name, user.lastname AS user_lastname, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.es_admin AS user_es_admin, user.empresa AS user_empresa, user.estado AS user_estado 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('Francisco', 1, 0)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)

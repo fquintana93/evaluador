@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="../static/css/normalize.css" as="style">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="../static/css/main.css" as="style">
+        <link rel="stylesheet" href="../static/css/main.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1 class="encabezado subrayado">Seguimiento</h1>
+        </header>
+        
+        <div class = "">      
+            <div class = "seguimiento-header">
+                <h2 class = "seguimiento">{{ _('Hola %(username)s, el resumen de evaluaciones de los ejecutivos de %(empresa)s se muestra a continuacion:', username=current_user.username, empresa=current_user.empresa) }}</h2>
+            </div> 
+        </div>
+
+        <div class="">
+            {% if form %}
+            {{ wtf.quick_form(form) }}
+            <br>
+            {% endif %}
+            {% for user in user %}
+            <div class="historial">
+                {% include '_usuarios.html' %}                
+            </div>
+            {% endfor %}
+            <nav aria-label="...">
+                <ul class="pager">
+                    <li class="previous{% if not prev_url %} disabled{% endif %}">
+                        <a href="{{ prev_url or '#' }}">
+                            <span aria-hidden="true">&larr;</span> {{ _('Atras') }}
+                        </a>
+                    </li>
+                    <li class="next{% if not next_url %} disabled{% endif %}">
+                        <a href="{{ next_url or '#' }}">
+                            {{ _('Ver Mas') }} <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div> 
+    
+        
+    </body>
+</html>
+
+{% endblock %}

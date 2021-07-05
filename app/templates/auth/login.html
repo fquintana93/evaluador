@@ -1,0 +1,45 @@
+{% extends 'baseini.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="../static/css/normalize.css" as="style">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="../static/css/main.css" as="style">
+        <link rel="stylesheet" href="../static/css/main.css">
+    </head>
+
+    <body class="">
+
+        <header>
+            <h1 class="encabezado">RDF - Riesgo </h1>
+        </header>
+
+
+        <div class="formulario-ingreso sombra">
+            <h1>{{ _('Ingreso') }}</h1>
+            <div class="row"> <!--<div class="row"-->
+                <div class="formulario-ingreso"> <!--<div class="col-md-4">-->
+                    {{ wtf.quick_form(form, extra_classes = "") }}
+                </div>
+            </div>
+            <br>
+            <!--<p>{{ _('Nuevo Usuario?') }} <a href="{{ url_for('main.register') }}">{{ _('Click para Registrarse!') }}</a></p>-->
+            <p class="flex alinear-centro">
+                {{ _('Olvidaste tu Contraseña?') }}
+                <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Click para Restablecer') }}</a>
+            </p>
+        </div>        
+    </body>
+</html>
+{% endblock %}
+

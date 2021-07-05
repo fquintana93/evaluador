@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="../static/css/normalize.css" as="style">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="../static/css/main.css" as="style">
+        <link rel="stylesheet" href="../static/css/main.css">
+    </head>
+
+    <body>
+
+        <header>
+
+        </header>
+
+
+        <div class="formulario-menu sombra">
+            <div class="historial-header"> 
+                <h1 class= "seguimiento">{{ _('Administrar Usuarios') }}</h1>
+            </div> 
+           
+            <div class="row">
+                <div class="formulario-menu">
+                    {{ wtf.quick_form(form) }}
+                </div>
+            </div>
+            <br>
+        </div> 
+    </body>
+</html>
+{% endblock %}
+

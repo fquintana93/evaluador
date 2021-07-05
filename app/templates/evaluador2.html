@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+
+  
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="../static/css/normalize.css" as="style">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="../static/css/main.css" as="style">
+        <link rel="stylesheet" href="../static/css/main.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1 class="subrayado">Evaluar Cliente</h1>
+        </header>
+
+        <div id="loading_oculto"><img src="../static/images/loading.gif" /></div>
+        <div class="formulario-evaluador sombra">
+            <div class="historial-header"> 
+                <h2 class= "seguimiento subrayado">{{ _('Parte 2 - Cuestionario CMF') }}</h2>
+            </div> 
+            
+            <div class="row"> <!--<div class="row"-->
+                <div class="formulario-evaluador"> <!--<div class="col-md-4">-->
+                    {{ wtf.quick_form(form, extra_classes = "evaluacion") }}
+                </div>
+            </div>
+            <br>
+        </div> 
+
+        
+    </body>
+</html>
+
+{% endblock %}
+

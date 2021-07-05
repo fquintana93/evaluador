@@ -1,0 +1,98 @@
+2021-07-02 12:20:21,312 ERROR: Exception on /seguimiento [GET] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 275, in seguimiento
+    return render_template('seguimiento.html',title=_('Seguimiento'), user=user.items, consultas = consultas,
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\user\Desktop\MTS\app\templates\seguimiento.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\user\Desktop\MTS\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\user\Desktop\MTS\app\templates\base.html", line 90, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\user\Desktop\MTS\app\templates\seguimiento.html", line 38, in block "app_content"
+    {% include '_usuarios.html' %}
+  File "C:\Users\user\Desktop\MTS\app\templates\_usuarios.html", line 24, in top-level template code
+    {{ _('En el mes actual se han realizado %(evaluaciones)s evaluaciones.', evaluaciones=consultas.query.filter_by(user_id = 1).count().first()) }}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'flask_sqlalchemy.BaseQuery object' has no attribute 'query'
+2021-07-02 12:21:56,999 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 12:21:58,978 ERROR: Exception on /seguimiento [GET] [in c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\user\Desktop\MTS\app\main\routes.py", line 275, in seguimiento
+    return render_template('seguimiento.html',title=_('Seguimiento'), user=user.items, consultas = consultas,
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\user\Desktop\MTS\app\templates\seguimiento.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\user\Desktop\MTS\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\user\Desktop\MTS\app\templates\base.html", line 90, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\user\Desktop\MTS\app\templates\seguimiento.html", line 38, in block "app_content"
+    {% include '_usuarios.html' %}
+  File "C:\Users\user\Desktop\MTS\app\templates\_usuarios.html", line 24, in top-level template code
+    {{ _('En el mes actual se han realizado %(evaluaciones)s evaluaciones.', evaluaciones=consultas.query.get(user_id)) }}
+  File "c:\users\user\anaconda3\envs\web\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'flask_sqlalchemy.BaseQuery object' has no attribute 'query'
+2021-07-02 12:23:06,859 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 12:24:15,126 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 12:24:21,716 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 12:25:52,934 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 13:47:48,929 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 13:48:16,784 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]
+2021-07-02 13:50:47,039 INFO: Evaluador startup [in C:\Users\user\Desktop\MTS\app\__init__.py:97]

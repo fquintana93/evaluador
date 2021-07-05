@@ -1,0 +1,183 @@
+{% extends 'bootstrap/base.html' %}
+
+
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="../static/css/normalize.css" as="style">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" href="../static/css/main.css" as="style">
+        <link rel="stylesheet" href="../static/css/main.css">
+    </head>
+
+    <body>
+        {% block main %}
+            {% block navbar %}
+            <header>
+                <!-- header inner -->
+                <div class="header margin_bottom_30_all">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                                <div class="full">
+                                    <div class="center-desk">
+                                        <div class="logo"> <a href="{{ url_for('auth.login') }}"><img src="../static/images/rdf.png" style="width:131px;height:25px alt="RDF"></a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                                <div class="menu-area">
+                                    <div class="limit-box">
+                                        <nav class="main-menu">
+                                            <ul class="menu-area-main">
+                                                {% if current_user.is_anonymous %}
+                                                <li><a href="{{ url_for('auth.login') }}">{{ _('Ingresar') }}</a></li>
+                                                {% elif current_user.es_admin==False%}
+                                                <li><a href="{{ url_for('main.inicio') }}">{{ _('Inicio') }}</a></li>
+                                                <li><a href="{{ url_for('main.evaluador') }}">{{ _('Evaluador') }}</a></li>
+                                                <li><a href="{{ url_for('main.historial') }}">{{ _('Historial') }}</a></li>
+                                                <li><a href="{{ url_for('main.inicio') }}">{{ _('Perfil') }}</a></li>
+                                                <li><a href="{{ url_for('auth.logout') }}">{{ _('Salir') }}</a></li>
+                                            </ul>
+                                                {% elif current_user.es_admin==True %}
+                                            <ul class="menu-area-main">
+                                                <li><a href="{{ url_for('main.empresa') }}">{{ _('Inicio') }}</a></li>
+                                                <li><a href="{{ url_for('main.evaluador') }}">{{ _('Evaluador') }}</a></li>
+                                                <li><a href="{{ url_for('main.historial') }}">{{ _('Historial') }}</a></li>
+                                                <li><a href="{{ url_for('main.seguimiento') }}">{{ _('Seguimiento') }}</a></li>
+                                                <li><a href="{{ url_for('main.gestion') }}">{{ _('Gestion') }}</a></li>
+                                                <li><a href="{{ url_for('main.empresa') }}">{{ _('Perfil') }}</a></li>
+                                                <li><a href="{{ url_for('auth.logout') }}">{{ _('Salir') }}</a></li>
+                                            </ul> 
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end header inner -->
+            </header>
+            {% endblock %}
+        {% endblock %}
+    </body>
+
+    
+
+</html>
+
+
+
+    {% block content %}
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            {# application content needs to be provided in the app_content block #}
+            {% block app_content %}{% endblock %}
+        </div>
+        {% block footer %}
+        <footer>
+            <div class="footer margin_top_50">
+                <div class="container">
+                    <div class="row pdn-top-30">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                            <ul class="iconos">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="12" cy="11" r="3" />
+                                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                                </svg> 
+                                <span>Santiago<br>Chile</span>   
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                            <ul class="iconos">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                                </svg>
+                                <span>+56973986702</span>
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                            <ul class="iconos">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                                    <polyline points="3 7 12 13 21 7" />
+                                </svg>
+                                <span>contacto@rdfspa.com</span>
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                            <ul class="iconos">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />
+                                    <line x1="10" y1="14" x2="20" y2="4" />
+                                    <polyline points="15 4 20 4 20 9" />
+                                </svg>
+                                <a href="https://www.rdfspa.com/"><img src="../static/images/rdf.png" style="width:131px;height:25px alt="RDF"></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>Copyright 2021 All Right Reserved Rdf Spa</p>
+                </div>
+            </div>
+        </footer>
+        {% endblock %}
+    {% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
+    <script>
+        function translate(sourceElem, destElem, sourceLang, destLang) {
+            $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+            $.post('/translate', {
+                text: $(sourceElem).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function(response) {
+                $(destElem).text(response['text'])
+            }).fail(function() {
+                $(destElem).text("{{ _('Error: Could not contact server.') }}");
+            });
+        }
+    </script>
+    <script type="text/javascript">
+
+    function addcommas(x) {
+    //remove commas
+    retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+
+    //apply formatting
+    return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}">
+{% endblock %}
